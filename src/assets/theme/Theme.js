@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import LocalStorageService from '../../services/LocalStorageService';
+import LocalStorageService from '../../services/localStorage.service';
+import { sidebarMenu } from '../../configuration/menu.config';
 
 function Theme({ className = '', children }) {
   const [showSidebar, setShowSidebar] = useState(LocalStorageService.getSidebar());
@@ -36,16 +37,13 @@ function Theme({ className = '', children }) {
               </button>
             </div>
             <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link " aria-current="home" href="/home">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item ">
-                <a className="nav-link " aria-current="counter" href="/counter">
-                  Counter
-                </a>
-              </li>
+              {sidebarMenu.map((item) => (
+                <li className="nav-item" key={`menu-${item.name}`}>
+                  <a className="nav-link " aria-current={item.name} href={item.path}>
+                    {item.titleEn}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         )}
