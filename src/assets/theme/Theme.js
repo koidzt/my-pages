@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import LocalStorageService from '../../services/LocalStorageService';
 
-function Theme({ children }) {
+function Theme({ className = '', children }) {
   const [showSidebar, setShowSidebar] = useState(LocalStorageService.getSidebar());
 
   const onClickBurgerMenu = () => {
@@ -49,7 +49,9 @@ function Theme({ children }) {
             </ul>
           </div>
         )}
-        <div className="col h-100 bg-dark p-3">{children}</div>
+        <div className="col w-100 h-100 bg-dark p-3">
+          <div className={`w-100 h-100 ${className}`}>{children}</div>
+        </div>
       </div>
     </div>
   );
