@@ -6,11 +6,9 @@ import Board from './Board';
 export default class Sudoku extends Component {
   render() {
     return (
-      <Theme>
+      <Theme title="Sudoku">
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-          <div style={{ width: 600, height: 500 }}>
-            <Board></Board>
-          </div>
+          <Board></Board>
         </div>
       </Theme>
     );

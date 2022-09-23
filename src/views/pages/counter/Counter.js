@@ -17,7 +17,7 @@ function Counter() {
   };
 
   return (
-    <Theme>
+    <Theme title="Counter">
       <div
         className={
           'd-flex justify-content-center' +

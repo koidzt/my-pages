@@ -75,7 +75,7 @@ export default class Board extends Component {
 
   render() {
     return (
-      <div className="d-flex flex-column">
+      <div className="d-flex flex-column w-100">
         <p className="timer">Elapsed Time: {this.state.usedTimes ? this.state.usedTimes : this.state.timer} seconds</p>
         <div className="board">
           {!this.state.loading &&

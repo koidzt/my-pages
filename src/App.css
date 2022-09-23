@@ -1,0 +1,23 @@
+.header-bar {
+  height: 50px;
+  position: fixed;
+}
+
+.body-page {
+  height: 100%;
+  width: 100%;
+  padding-top: 50px;
+}
+
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+}
+
+.title-sidebar {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

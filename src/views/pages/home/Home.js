@@ -3,7 +3,7 @@ import Theme from '../../../assets/theme/Theme';
 
 function Home() {
   return (
-    <Theme>
+    <Theme title="Home">
       <div className="row">
         <div className="col">Home</div>
       </div>
