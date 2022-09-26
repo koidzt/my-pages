@@ -7,8 +7,12 @@ export default class Sudoku extends Component {
   render() {
     return (
       <Theme title="Sudoku">
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
-          <Board></Board>
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-md-6 col-lg-6 col-xl-8 col-xxl-6 ">
+              <Board></Board>
+            </div>
+          </div>
         </div>
       </Theme>
     );

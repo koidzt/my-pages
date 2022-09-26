@@ -11,7 +11,7 @@ function Cell({ isInitial, number, onChange }) {
         onChange((number + 1) % 5);
       }}
     >
-      {number !== 0 && number}
+      <p className={`text-number`}>{number !== 0 && number}</p>
     </div>
   );
 }

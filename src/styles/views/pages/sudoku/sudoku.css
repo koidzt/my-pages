@@ -1,11 +1,10 @@
 .cell {
+  position: relative;
   width: 25%;
-  height: 150px;
+  padding-top: 25%; /* 1:1 Aspect Ratio */
   float: left;
-  line-height: 150px;
-  text-align: center;
   background: #fff;
-  font-size: 50px;
+  text-align: center;
   font-weight: 700;
   color: #444;
   box-sizing: border-box;
@@ -56,6 +55,19 @@
   border-bottom: 3px black solid;
 }
 
+.text-number {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 p {
   text-align: center;
   font-size: 30px;
@@ -83,4 +95,36 @@ button {
   border: 1px solid #444;
   color: #444;
   margin-right: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .text-number {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .text-number {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .text-number {
+    font-size: 6rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .text-number {
+    font-size: 9rem;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .text-number {
+    font-size: 7rem;
+  }
 }

@@ -20,7 +20,7 @@ function Theme({ title = '', className = '', children }) {
   const onClickDocument = () => {};
 
   return (
-    <div className="container-fluid vh-100 text-light p-0">
+    <div className="vh-100 text-light">
       <div className="h-100">
         <div className="header-bar bg-secondary position-absolute w-100 d-flex justify-content-between align-items-center">
           <button className="btn btn-second my-0 mx-2" onClick={onClickBurgerMenu}>
@@ -53,7 +53,7 @@ function Theme({ title = '', className = '', children }) {
             </ul>
           </div>
         )}
-        <div className="body-page bg-dark overflow-auto">
+        <div className="body-page bg-dark container-fluid overflow-auto">
           <div className={`w-100 h-100 ${className}`}>{children}</div>
         </div>
       </div>
