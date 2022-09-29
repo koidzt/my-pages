@@ -1,9 +1,9 @@
-const setSidebar = (status) => {
+const setSidebar = (status = 'show' || 'hide') => {
   localStorage.setItem('ACCESS_SIDEBAR', status);
 };
 
 const getSidebar = () => {
-  if (localStorage.getItem('ACCESS_SIDEBAR') === null) return localStorage.setItem('ACCESS_SIDEBAR', 'show');
+  if (localStorage.getItem('ACCESS_SIDEBAR') === null) return localStorage.setItem('ACCESS_SIDEBAR', 'hide');
 
   return localStorage.getItem('ACCESS_SIDEBAR');
 };

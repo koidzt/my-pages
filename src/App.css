@@ -1,3 +1,7 @@
+.theme-box {
+  min-height: 100vh;
+}
+
 .header-bar {
   height: 50px;
   position: fixed;
