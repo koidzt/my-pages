@@ -4,7 +4,7 @@ import Theme from '../../../assets/theme/Theme';
 function TodoList() {
   return (
     <Theme title="To Do List">
-      <div>TodoList</div>
+      <div>Todo List</div>
     </Theme>
   );
 }
