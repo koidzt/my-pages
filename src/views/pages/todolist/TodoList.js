@@ -8,12 +8,30 @@ function TodoList() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    setTodoList([...todoList, enterTodo]);
+    setTodoList([...todoList, { title: enterTodo, subtitle: [] }]);
     setEnterTodo('');
   };
 
   const handleDelete = (index) => {
     const newTodoList = todoList.filter((item, idx) => idx !== index);
+
+    setTodoList(newTodoList);
+  };
+
+  const handleAddSubtitle = (index) => {
+    const newTodoList = todoList.map((item, idx) => ({
+      ...item,
+      subtitle: idx === index ? [...item.subtitle, 'new subtitle'] : [...item.subtitle],
+    }));
+
+    setTodoList(newTodoList);
+  };
+
+  const handleDeleteSub = (indexTitle, indexSub) => {
+    const newTodoList = todoList.map((item, idx) => ({
+      ...item,
+      subtitle: idx === indexTitle ? item.subtitle.filter((sub, i) => i !== indexSub) : [...item.subtitle],
+    }));
 
     setTodoList(newTodoList);
   };
@@ -42,11 +60,32 @@ function TodoList() {
                   <h5 className="mb-0">{idx + 1} :</h5>
                 </div>
                 <div className="col-11 d-flex align-items-center justify-content-between">
-                  <h5 className="mb-0">{item}</h5>
-                  <button className="btn text-light bg-danger" onClick={() => handleDelete(idx)}>
-                    X
-                  </button>
+                  <h5 className="mb-0">{item.title}</h5>
+                  <div className="d-flex">
+                    <button className="btn text-light bg-primary mx-2" onClick={() => handleAddSubtitle(idx)}>
+                      +
+                    </button>
+                    <button className="btn text-light bg-danger" onClick={() => handleDelete(idx)}>
+                      X
+                    </button>
+                  </div>
                 </div>
+                {item.subtitle.length > 0 &&
+                  item.subtitle.map((sub, i) => (
+                    <div className="row align-items-center">
+                      <div className="col-2 text-end">
+                        <h5 className="mb-0">
+                          {idx + 1}.{i + 1} :
+                        </h5>
+                      </div>
+                      <div className="col-10 d-flex align-items-center justify-content-between">
+                        <h5 className="mb-0">{sub}</h5>
+                        <button className="btn text-light bg-danger" onClick={() => handleDeleteSub(idx, i)}>
+                          X
+                        </button>
+                      </div>
+                    </div>
+                  ))}
               </div>
             ))}
           </div>
