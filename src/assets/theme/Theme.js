@@ -3,7 +3,15 @@ import { sidebarMenu } from '../../configuration/menu.config';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import LocalStorageService from '../../services/localStorage.service';
-import SessionStorageService from '../../services/sessionStorage.servise';
+import SessionStorageService from '../../services/sessionStorage.service';
+
+// export const defaultTheme = {
+//  light:{},
+//  dark:{
+//   bgColor:,
+//   color:,
+//  }
+// }
 
 function Theme({ title = '', className = '', children }) {
   const [showSidebar, setShowSidebar] = useState(LocalStorageService.getSidebar());

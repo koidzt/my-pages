@@ -4,13 +4,26 @@ import Theme from '../../../assets/theme/Theme';
 function TodoList() {
   const [enterTodo, setEnterTodo] = useState('');
   const [todoList, setTodoList] = useState([]);
-  const [showEditSub, setShowEditSub] = useState({ status: false, indexTitle: '', indexSub: '' });
 
-  const handleSubmit = (event) => {
+  const handleSubmitNewTodo = (event) => {
     event.preventDefault();
 
     setTodoList([...todoList, { title: enterTodo, subtitle: [] }]);
     setEnterTodo('');
+  };
+
+  const handleSubmitNewTask = (event, indexTitle, indexSub) => {
+    event.preventDefault();
+
+    const newTodoList = todoList.map((item, idx) => ({
+      ...item,
+      subtitle:
+        idx === indexTitle
+          ? item.subtitle.map((sub, i) => ({ ...sub, edit: i === indexSub ? !sub.edit : sub.edit }))
+          : [...item.subtitle],
+    }));
+
+    setTodoList(newTodoList);
   };
 
   const handleDelete = (index) => {
@@ -63,9 +76,9 @@ function TodoList() {
   return (
     <Theme title="To Do List">
       <div className="container d-flex flex-column align-items-center mt-3">
-        <div className="row w-100">
-          <div className="col text-center">
-            <form className="w-100" onSubmit={handleSubmit}>
+        <div className="row w-100 justify-content-center">
+          <div className="col-sm-12 col-md-10 text-center">
+            <form className="w-100" onSubmit={handleSubmitNewTodo}>
               <input
                 className="form-control bg-dark text-light"
                 type={'text'}
@@ -76,8 +89,8 @@ function TodoList() {
           </div>
         </div>
 
-        <div className="row w-100 mt-3">
-          <div className="col text-center">
+        <div className="row w-100 mt-3 justify-content-center">
+          <div className="col-sm-12 col-md-10 text-center">
             {todoList.map((item, idx) => (
               <div className="row justify-content-end align-items-center" key={`title-${idx + 1}`}>
                 <div className="col-auto text-end">
@@ -107,12 +120,14 @@ function TodoList() {
                       </div>
                       <div className="col d-flex align-items-center justify-content-between">
                         {sub.edit ? (
-                          <input
-                            className="w-100 text-light bg-dark border border-secondary rounded"
-                            type={'text'}
-                            value={sub.title}
-                            onChange={(e) => handleChangeSubtitle(e, idx, i)}
-                          />
+                          <form className="w-100" onSubmit={(e) => handleSubmitNewTask(e, idx, i)}>
+                            <input
+                              className="w-100 text-light bg-dark border border-secondary rounded"
+                              type={'text'}
+                              value={sub.title}
+                              onChange={(e) => handleChangeSubtitle(e, idx, i)}
+                            />
+                          </form>
                         ) : (
                           <h5 className="mb-0">{sub.title}</h5>
                         )}
