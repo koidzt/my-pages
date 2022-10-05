@@ -1,0 +1,44 @@
+.button-menu {
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+  margin: 50px;
+  box-sizing: initial;
+}
+
+.color-one {
+  background-color: lightcyan;
+  color: midnightblue;
+}
+.color-two {
+  background-color: lightgoldenrodyellow;
+  color: darkgoldenrod;
+}
+.color-three {
+  background-color: mistyrose;
+  color: indianred;
+}
+.color-four {
+  background-color: rgb(205, 236, 205);
+  color: darkgreen;
+}
+.color-one:hover {
+  border: 10px solid rgba(25, 25, 112, 0.5);
+  margin: 40px;
+}
+.color-two:hover {
+  border: 10px solid rgba(184, 135, 11, 0.5);
+  margin: 40px;
+}
+.color-three:hover {
+  border: 10px solid rgba(205, 92, 92, 0.5);
+  margin: 40px;
+}
+.color-four:hover {
+  border: 10px solid rgba(0, 100, 0, 0.5);
+  margin: 40px;
+}
+
+.button-menu:hover {
+  opacity: 0.75;
+}

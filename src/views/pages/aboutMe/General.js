@@ -17,7 +17,7 @@ function General() {
         // Setting various property values
         let alink = document.createElement('a');
         alink.href = fileURL;
-        alink.download = 'Thanawan_Panitpongsri.pdf';
+        alink.download = 'Thanawan_Panitpongsri[FrontendDev].pdf';
         alink.click();
       });
     });
@@ -38,7 +38,8 @@ function General() {
               title={'Thanawan_Panitpongsri.pdf'}
               onClick={onClickDocument}
             >
-              <FontAwesomeIcon className="text-light" icon={faFileLines} />
+              <FontAwesomeIcon className="text-light me-2" icon={faFileLines} />
+              <span className="text-light ">Resume</span>
             </button>
           </div>
 
@@ -98,10 +99,10 @@ function General() {
         </div>
       </div>
 
-      {/* <div className="row mt-5">
+      <div className="row mt-5">
         <div className="col-sm-12 col-md-4">Technical Skills</div>
         <div className="col-sm-12 col-md-8">Work Experience</div>
-      </div> */}
+      </div>
     </div>
   );
 }

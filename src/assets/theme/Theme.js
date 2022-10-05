@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { sidebarMenu } from '../../configuration/menu.config';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faHome, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import LocalStorageService from '../../services/localStorage.service';
 import SessionStorageService from '../../services/sessionStorage.service';
 
@@ -37,17 +37,25 @@ function Theme({ title = '', className = '', children }) {
     }
   };
 
+  const onClickHome = () => {
+    window.location.assign('/home');
+  };
+
   return (
     <div className="text-light bg-dark theme-box">
-      <div className="header-bar bg-secondary position-absolute w-100 d-flex justify-content-between align-items-center">
+      <div className="header-bar bg-secondary">
         <button className="btn btn-second my-0 mx-2" onClick={onClickBurgerMenu}>
           <FontAwesomeIcon className="text-light" icon={faBars} />
         </button>
         <h3>{title}</h3>
-        {/* <button className="btn btn-second my-0 mx-2" onClick={onClickWebTheme}>
-          <FontAwesomeIcon className="text-light" icon={webTheme === 'dark' ? faSun : faMoon} />
-        </button> */}
-        <div className="mx-3" style={{ width: '40px' }}></div>
+        <div className="mx-3">
+          {/* <button className="btn btn-second my-0 mx-2" onClick={onClickWebTheme}>
+            <FontAwesomeIcon className="text-light" icon={webTheme === 'dark' ? faSun : faMoon} />
+          </button> */}
+          <button className="btn btn-second my-0 mx-2" onClick={onClickHome}>
+            <FontAwesomeIcon className="text-light" icon={faHome} />
+          </button>
+        </div>
       </div>
 
       {showSidebar === 'show' && (

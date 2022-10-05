@@ -1,5 +1,6 @@
 import AboutMe from '../views/pages/aboutMe/AboutMe';
 import Counter from '../views/pages/counter/Counter';
+import Home from '../views/pages/home/Home';
 import Sudoku from '../views/pages/sudoku/Sudoku';
 import TodoList from '../views/pages/todolist/TodoList';
 
@@ -14,7 +15,8 @@ class Menu {
 }
 
 export const sidebarMenu = [
-  new Menu('AboutMe', '/aboutme', AboutMe, 'About Me', 'เกี่ยวกับฉัน'),
+  new Menu('Home', '/home', Home, 'Home', 'หน้าแรก'),
+  new Menu('AboutMe', 'aboutme', AboutMe, 'About Me', 'เกี่ยวกับฉัน'),
   new Menu('Counter', 'counter', Counter, 'Counter', 'นับเลข'),
   new Menu('Sudoku', 'sudoku', Sudoku, 'Sudoku', 'ซูโดกุ'),
   new Menu('TodoList', 'todolist', TodoList, 'Todo List', 'รายการที่ต้องทำ'),

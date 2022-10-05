@@ -4,8 +4,12 @@
 
 .header-bar {
   height: 50px;
+  width: 100%;
   position: fixed;
   z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .body-page {
