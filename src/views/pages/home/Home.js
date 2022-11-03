@@ -5,12 +5,13 @@ import '../../../styles/views/pages/home/home.css';
 
 function Home() {
   return (
-    <Theme>
+    <Theme title="Home">
       <div className="container mt-3">
         <div className="row justify-content-center align-items-center">
           {sidebarMenu.map((item, idx) => {
             if (idx !== 0) {
               let colorButton = '';
+              const randomNum = (Math.random().toLocaleString('en', { maximumFractionDigits: 1 }) * 10) % 4;
               switch (idx % 4) {
                 case 1:
                   colorButton = 'color-one';
@@ -26,13 +27,10 @@ function Home() {
                   colorButton = 'color-four';
                   break;
               }
+
               return (
-                <div className="col-auto text-center">
-                  <button
-                    className={`button-menu ${colorButton}`}
-                    key={`button-to-${item.name}`}
-                    onClick={() => window.location.assign(item.path)}
-                  >
+                <div className="col-auto text-center" key={`button-to-${item.name}`}>
+                  <button className={`button-menu ${colorButton}`} onClick={() => window.location.assign(item.path)}>
                     {item.titleEn}
                   </button>
                 </div>

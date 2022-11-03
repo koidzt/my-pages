@@ -12,7 +12,7 @@ function App() {
         {sidebarMenu.map(({ name, path, component: PageComponent }) => (
           <Route key={`route-${name}`} exact path={path} element={<PageComponent />} />
         ))}
-        <Route path="*" element={<Navigate to="/aboutme" replace />} />
+        <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>
     </BrowserRouter>
   );
