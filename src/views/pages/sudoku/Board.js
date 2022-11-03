@@ -95,10 +95,12 @@ export default class Board extends Component {
             )}
         </div>
         <div className="d-flex justify-content-center">
-          <button className="restart-button" onClick={this.restartBoard}>
+          <button className="btn btn-secondary p-md-2 p-lg-4 fs-3 fw-semibold my-3 mx-2" onClick={this.restartBoard}>
             Restart
           </button>
-          <button onClick={this.submit}>Submit</button>
+          <button className="btn btn-light p-md-2 p-lg-4 fs-3 fw-semibold my-3 mx-2" onClick={this.submit}>
+            Submit
+          </button>
         </div>
         <p>{this.state.statusText}</p>
       </div>

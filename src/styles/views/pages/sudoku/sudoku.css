@@ -76,14 +76,24 @@ p {
   width: 100%;
 }
 
-button {
+.custom-font-size {
+  font-size: 25px;
+}
+
+.custom-btn {
   padding: 15px;
   border: 0;
   background: #444;
   color: #fff;
   font-size: 25px;
   border-radius: 5px;
-  margin-top: 10px;
+  margin: 20px 10px;
+}
+
+.custom-btn:hover {
+  opacity: 0.75;
+  border: 10px solid rgba(114, 114, 114, 0.5);
+  margin: 10px 0px;
 }
 
 .timer {
@@ -94,7 +104,6 @@ button {
   background-color: #fff;
   border: 1px solid #444;
   color: #444;
-  margin-right: 20px;
 }
 
 @media only screen and (max-width: 768px) {
