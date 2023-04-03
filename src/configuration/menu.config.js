@@ -16,7 +16,7 @@ class Menu {
 
 export const sidebarMenu = [
   new Menu('Home', '/home', Home, 'Home', 'หน้าแรก'),
-  new Menu('AboutMe', 'aboutme', AboutMe, 'About Me', 'เกี่ยวกับฉัน'),
+  // new Menu('AboutMe', 'aboutme', AboutMe, 'About Me', 'เกี่ยวกับฉัน'),
   new Menu('Counter', 'counter', Counter, 'Counter', 'นับเลข'),
   new Menu('Sudoku', 'sudoku', Sudoku, 'Sudoku', 'ซูโดกุ'),
   new Menu('TodoList', 'todolist', TodoList, 'Todo List', 'รายการที่ต้องทำ'),

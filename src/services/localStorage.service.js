@@ -3,17 +3,7 @@ const setSidebar = (status = 'show' || 'hide') => {
 };
 
 const getSidebar = () => {
-  if (localStorage.getItem('ACCESS_SIDEBAR') === null) return localStorage.setItem('ACCESS_SIDEBAR', 'hide');
-
   return localStorage.getItem('ACCESS_SIDEBAR');
-};
-
-const setLanguage = (language = 'en' || 'th') => {
-  localStorage.setItem('ACCESS_LANGUAGE', language);
-};
-
-const getLanguage = () => {
-  return localStorage.getItem('ACCESS_LANGUAGE');
 };
 
 // const removeToken = () => {
@@ -30,6 +20,4 @@ const getLanguage = () => {
 export default {
   setSidebar,
   getSidebar,
-  setLanguage,
-  getLanguage,
 };
