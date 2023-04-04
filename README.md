@@ -1,5 +1,5 @@
-# my-page
+# my-pages
 
 Page is test my coding
 
-Preview Pages : https://web-my-page.netlify.app
+Preview Pages : https://test-my-pages.netlify.app
