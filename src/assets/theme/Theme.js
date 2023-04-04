@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faHome, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import SessionStorageService from '../../services/sessionStorage.service';
 import LocalStorageService from '../../services/localStorage.service';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { ConfigWebContext } from '../../App';
 
 function Theme({ title = '', className = '', children }) {
@@ -85,9 +85,9 @@ function Theme({ title = '', className = '', children }) {
           <ul className="navbar-nav px-4">
             {sidebarMenu.map((item) => (
               <li className="nav-item" key={`menu-${item.name}`}>
-                <a className="nav-link " aria-current={item.name} href={item.path}>
+                <NavLink className="nav-link " aria-current={item.name} to={item.path}>
                   {item.titleEn}
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>

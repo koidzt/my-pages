@@ -2,8 +2,15 @@ import React from 'react';
 import Theme from '../../../assets/theme/Theme';
 import { sidebarMenu } from '../../../configuration/menu.config';
 import '../../../styles/views/pages/home/home.css';
+import { useNavigate } from 'react-router';
 
 function Home() {
+  const navigate = useNavigate();
+
+  const handleClickMenu = (path = '/') => {
+    return () => navigate(path);
+  };
+
   return (
     <Theme title="Home">
       <div className="container mt-3">
@@ -30,7 +37,7 @@ function Home() {
 
               return (
                 <div className="col-auto text-center" key={`button-to-${item.name}`}>
-                  <button className={`button-menu ${colorButton}`} onClick={() => window.location.assign(item.path)}>
+                  <button className={`button-menu ${colorButton}`} onClick={handleClickMenu(item.path)}>
                     {item.titleEn}
                   </button>
                 </div>
