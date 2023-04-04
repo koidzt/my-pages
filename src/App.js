@@ -1,6 +1,6 @@
 import './App.css';
 import { useState, createContext } from 'react';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { sidebarMenu } from './configuration/menu.config';
 import sessionStorageService from './services/sessionStorage.service';
 import localStorageService from './services/localStorage.service';
@@ -17,7 +17,7 @@ function App() {
 
   return (
     <ConfigWebContext.Provider value={{ theme, setTheme, sidebar, setSidebar }}>
-      <BrowserRouter>
+      <HashRouter basename="/">
         <Routes>
           <Route exact path={'/demo'} element={<Demo />} />
           {sidebarMenu.map(({ name, path, component: PageComponent }) => (
@@ -25,7 +25,7 @@ function App() {
           ))}
           <Route path="*" element={<Navigate to="/home" replace />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </ConfigWebContext.Provider>
   );
 }
